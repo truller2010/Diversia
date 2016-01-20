@@ -26,6 +26,8 @@
   <Metadata>
     <MetadataFile FileName="BlogService.xsd" MetadataType="Schema" ID="eeb2d0f5-b205-41b7-85df-ab8920b86fdb" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd4" />
     <MetadataFile FileName="BlogService1.xsd" MetadataType="Schema" ID="0f005ce8-5793-4d36-a01d-315419f4ccdb" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BlogService6.xsd" MetadataType="Schema" ID="4b15e9b3-5e3f-44cf-822f-20a3e8290b03" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd6" />
+    <MetadataFile FileName="BlogService61.xsd" MetadataType="Schema" ID="64945a44-1825-4ec3-a213-aec6c9aa882a" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd7" />
     <MetadataFile FileName="BlogService2.xsd" MetadataType="Schema" ID="eaf5c820-8da2-4736-b751-e1bd408bc67e" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd0" />
     <MetadataFile FileName="BlogService.disco" MetadataType="Disco" ID="af02efb3-e94a-4dbc-b64d-be36af14f2ef" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?disco" />
     <MetadataFile FileName="BlogService3.xsd" MetadataType="Schema" ID="a1d05dfc-ad02-4e09-b5ce-eccfc708c5cb" SourceId="1" SourceUrl="http://localhost:4961/BlogService.svc?xsd=xsd2" />

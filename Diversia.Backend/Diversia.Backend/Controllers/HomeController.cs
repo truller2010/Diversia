@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Diversia.Backend.BlogSVC;
 using Diversia.Core;
+using Diversia.Core.Filter;
+using Diversia.Core.Pager;
 using Diversia.Models.BlogPost;
 
 namespace Diversia.Backend.Controllers
@@ -13,11 +15,12 @@ namespace Diversia.Backend.Controllers
     {
         public ActionResult Index()
         {
-            var lista=new List<BlogPostModel>();
+            Page<BlogPostModel> page = null;
+            FindRequestImpl<SearchFilter> filter = new FindRequestImpl<SearchFilter>();
             new BlogClient().Using(cache => {
-               lista = cache.GetAll();
+               page = cache.Paginated(filter);
             });
-            return View(lista);
+            return View(page);
         }
 
         public ActionResult About()

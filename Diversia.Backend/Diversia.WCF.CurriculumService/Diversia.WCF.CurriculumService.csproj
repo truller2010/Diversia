@@ -41,6 +41,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FizzWare.NBuilder, Version=3.0.1.0, Culture=neutral, PublicKeyToken=5651b03e12e42c12, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -63,7 +67,9 @@
   <ItemGroup>
     <Content Include="BlogService.svc" />
     <EmbeddedResource Include="Config\Backend.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogService.svc.cs">
@@ -71,13 +77,16 @@
     </Compile>
     <Compile Include="GlobalErrorAttribute.cs" />
     <Compile Include="GlobalErrorHandler.cs" />
+    <Compile Include="HibernateDao.cs" />
     <Compile Include="IBlog.cs" />
+    <Compile Include="Interfaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,6 +95,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Diversia.Core\Diversia.Core.csproj">
+      <Project>{e37c9232-0fb3-40cb-bd9e-37dcb4009bdf}</Project>
+      <Name>Diversia.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Diversia.Models\Diversia.Models.csproj">
       <Project>{15ccc224-6a1d-4962-83d4-d9126b38e77c}</Project>
       <Name>Diversia.Models</Name>
@@ -93,6 +106,10 @@
     <ProjectReference Include="..\Diversia.Service\Diversia.Service.csproj">
       <Project>{f757056f-137e-4795-9d24-4773393989ba}</Project>
       <Name>Diversia.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diversia.WCF.Extensions\Diversia.WCF.Extensions.csproj">
+      <Project>{cc55243b-356c-4414-9d5f-305334306e90}</Project>
+      <Name>Diversia.WCF.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

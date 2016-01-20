@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" />
-  <xs:complexType name="BlogCategoryModel">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Diversia.Core.Filter" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Diversia.Core.Filter" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SearchFilter">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" minOccurs="0" name="Posts" nillable="true" type="q1:ArrayOfBlogPostModel" />
-      <xs:element minOccurs="0" name="UrlSlug" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="BlogCategoryModel" nillable="true" type="tns:BlogCategoryModel" />
+  <xs:element name="SearchFilter" nillable="true" type="tns:SearchFilter" />
 </xs:schema>

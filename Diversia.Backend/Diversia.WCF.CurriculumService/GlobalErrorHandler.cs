@@ -15,10 +15,9 @@ namespace Diversia.WCF.CurriculumService
         public void ProvideFault(Exception error, MessageVersion version, ref Message fault)
         {
             var newEx = new FaultException(
-                string.Format("Exception caught at GlobalErrorHandler{0}Method: {1}{2}Message:{3}",
-                             Environment.NewLine, error.TargetSite.Name, Environment.NewLine, error.Message));
+                $"Exception caught at GlobalErrorHandler{Environment.NewLine}Method: {error.TargetSite.Name}{Environment.NewLine}Message:{error.Message}");
 
-            MessageFault msgFault = newEx.CreateMessageFault();
+            var msgFault = newEx.CreateMessageFault();
             fault = Message.CreateMessage(version, msgFault, newEx.Action);
         }
 
@@ -27,9 +26,9 @@ namespace Diversia.WCF.CurriculumService
 
         public bool HandleError(Exception error)
         {
-            string path = HostingEnvironment.ApplicationPhysicalPath;
+            var path = HostingEnvironment.ApplicationPhysicalPath;
 
-            using (TextWriter tw = File.AppendText(Path.Combine(path, @"c:\\temp\\logs\\error.txt")))
+            using (TextWriter tw = File.AppendText(@"c:\\temp\\error.txt"))
             {
                 if (error != null)
                 {

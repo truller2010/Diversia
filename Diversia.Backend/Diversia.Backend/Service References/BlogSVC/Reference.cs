@@ -15,11 +15,11 @@ namespace Diversia.Backend.BlogSVC {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlogSVC.IBlog")]
     public interface IBlog {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlog/GetAll", ReplyAction="http://tempuri.org/IBlog/GetAllResponse")]
-        System.Collections.Generic.List<Diversia.Models.BlogPost.BlogPostModel> GetAll();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlog/Paginated", ReplyAction="http://tempuri.org/IBlog/PaginatedResponse")]
+        Diversia.Core.Pager.Page<Diversia.Models.BlogPost.BlogPostModel> Paginated(Diversia.Core.Pager.FindRequestImpl<Diversia.Core.Filter.SearchFilter> filter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlog/GetAll", ReplyAction="http://tempuri.org/IBlog/GetAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Diversia.Models.BlogPost.BlogPostModel>> GetAllAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlog/Paginated", ReplyAction="http://tempuri.org/IBlog/PaginatedResponse")]
+        System.Threading.Tasks.Task<Diversia.Core.Pager.Page<Diversia.Models.BlogPost.BlogPostModel>> PaginatedAsync(Diversia.Core.Pager.FindRequestImpl<Diversia.Core.Filter.SearchFilter> filter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace Diversia.Backend.BlogSVC {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Diversia.Models.BlogPost.BlogPostModel> GetAll() {
-            return base.Channel.GetAll();
+        public Diversia.Core.Pager.Page<Diversia.Models.BlogPost.BlogPostModel> Paginated(Diversia.Core.Pager.FindRequestImpl<Diversia.Core.Filter.SearchFilter> filter) {
+            return base.Channel.Paginated(filter);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Diversia.Models.BlogPost.BlogPostModel>> GetAllAsync() {
-            return base.Channel.GetAllAsync();
+        public System.Threading.Tasks.Task<Diversia.Core.Pager.Page<Diversia.Models.BlogPost.BlogPostModel>> PaginatedAsync(Diversia.Core.Pager.FindRequestImpl<Diversia.Core.Filter.SearchFilter> filter) {
+            return base.Channel.PaginatedAsync(filter);
         }
     }
 }

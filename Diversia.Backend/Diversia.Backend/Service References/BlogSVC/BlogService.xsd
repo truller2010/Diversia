@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" />
-  <xs:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogTag" />
-  <xs:complexType name="ArrayOfBlogPostTagMapModel">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" />
+  <xs:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" />
+  <xs:complexType name="ArrayOfBlogPostModel">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlogPostTagMapModel" nillable="true" type="tns:BlogPostTagMapModel" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlogPostModel" nillable="true" type="tns:BlogPostModel" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfBlogPostTagMapModel" nillable="true" type="tns:ArrayOfBlogPostTagMapModel" />
-  <xs:complexType name="BlogPostTagMapModel">
+  <xs:element name="ArrayOfBlogPostModel" nillable="true" type="tns:ArrayOfBlogPostModel" />
+  <xs:complexType name="BlogPostModel">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" minOccurs="0" name="BlogPost" nillable="true" type="q1:BlogPostModel" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogTag" minOccurs="0" name="BlogTag" nillable="true" type="q2:BlogTagModel" />
-      <xs:element minOccurs="0" name="Post_id" type="xs:int" />
-      <xs:element minOccurs="0" name="Tag_id" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" minOccurs="0" name="Category" nillable="true" type="q1:BlogCategoryModel" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Meta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Published" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShortDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" minOccurs="0" name="Tags" nillable="true" type="q2:ArrayOfBlogPostTagMapModel" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlSlug" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="BlogPostTagMapModel" nillable="true" type="tns:BlogPostTagMapModel" />
+  <xs:element name="BlogPostModel" nillable="true" type="tns:BlogPostModel" />
 </xs:schema>

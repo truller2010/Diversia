@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Diversia.Core.Filter;
+using Diversia.Core.Pager;
 using Diversia.Models.BlogPost;
 
 namespace Diversia.WCF.CurriculumService
@@ -14,7 +16,7 @@ namespace Diversia.WCF.CurriculumService
     public interface IBlog
     {
         [OperationContract]
-        IEnumerable<BlogPostModel> GetAll();
+        Page<BlogPostModel> Paginated(FindRequestImpl<SearchFilter> filter);
 
     }
 }

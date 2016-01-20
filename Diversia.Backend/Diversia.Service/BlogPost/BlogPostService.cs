@@ -52,7 +52,7 @@ namespace Diversia.Service.BlogPost
         /// <summary>
         /// 
         /// </summary>
-        public IBlogPostRepository BlogPostRepository { get; set; }
+        public IBlogPostRepository BlogPostRepository = new BlogPostRepository();
 
         /// <summary>
         /// 

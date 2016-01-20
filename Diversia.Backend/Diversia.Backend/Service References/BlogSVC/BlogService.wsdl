@@ -4,28 +4,30 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" />
-      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" />
-      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" />
-      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogTag" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Diversia.Core.Pager" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Diversia.Core.Filter" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPost" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogCategory" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogPostTagMap" />
+      <xsd:import schemaLocation="http://localhost:4961/BlogService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Diversia.Models.BlogTag" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IBlog_GetAll_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAll" />
+  <wsdl:message name="IBlog_Paginated_InputMessage">
+    <wsdl:part name="parameters" element="tns:Paginated" />
   </wsdl:message>
-  <wsdl:message name="IBlog_GetAll_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  <wsdl:message name="IBlog_Paginated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaginatedResponse" />
   </wsdl:message>
   <wsdl:portType name="IBlog">
-    <wsdl:operation name="GetAll">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBlog/GetAll" message="tns:IBlog_GetAll_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBlog/GetAllResponse" message="tns:IBlog_GetAll_OutputMessage" />
+    <wsdl:operation name="Paginated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlog/Paginated" message="tns:IBlog_Paginated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlog/PaginatedResponse" message="tns:IBlog_Paginated_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBlog" type="tns:IBlog">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetAll">
-      <soap:operation soapAction="http://tempuri.org/IBlog/GetAll" style="document" />
+    <wsdl:operation name="Paginated">
+      <soap:operation soapAction="http://tempuri.org/IBlog/Paginated" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
