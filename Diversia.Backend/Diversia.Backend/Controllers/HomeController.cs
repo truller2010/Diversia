@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Diversia.Backend.BlogSVC;
+using Diversia.Core;
+using Diversia.Models.BlogPost;
 
 namespace Diversia.Backend.Controllers
 {
@@ -10,7 +13,11 @@ namespace Diversia.Backend.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var lista=new List<BlogPostModel>();
+            new BlogClient().Using(cache => {
+               lista = cache.GetAll();
+            });
+            return View(lista);
         }
 
         public ActionResult About()

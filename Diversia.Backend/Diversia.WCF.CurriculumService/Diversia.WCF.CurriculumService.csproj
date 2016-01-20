@@ -62,12 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BlogService.svc" />
+    <EmbeddedResource Include="Config\Backend.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogService.svc.cs">
       <DependentUpon>BlogService.svc</DependentUpon>
     </Compile>
+    <Compile Include="GlobalErrorAttribute.cs" />
+    <Compile Include="GlobalErrorHandler.cs" />
     <Compile Include="IBlog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +89,10 @@
     <ProjectReference Include="..\Diversia.Models\Diversia.Models.csproj">
       <Project>{15ccc224-6a1d-4962-83d4-d9126b38e77c}</Project>
       <Name>Diversia.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diversia.Service\Diversia.Service.csproj">
+      <Project>{f757056f-137e-4795-9d24-4773393989ba}</Project>
+      <Name>Diversia.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

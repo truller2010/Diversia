@@ -8,7 +8,7 @@ using System.Web.Routing;
 
 namespace Diversia.Backend
 {
-    public class MvcApplication : SpringMvcApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -16,6 +16,7 @@ namespace Diversia.Backend
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
     }
 }

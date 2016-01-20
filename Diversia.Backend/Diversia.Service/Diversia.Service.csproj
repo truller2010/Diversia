@@ -97,9 +97,6 @@
     <EmbeddedResource Include="Config\Service.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Diversia.Core\Diversia.Core.csproj">
       <Project>{e37c9232-0fb3-40cb-bd9e-37dcb4009bdf}</Project>
       <Name>Diversia.Core</Name>
@@ -112,6 +109,9 @@
       <Project>{d02848d7-6981-4a11-a195-dfca26cd70ee}</Project>
       <Name>Diversia.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

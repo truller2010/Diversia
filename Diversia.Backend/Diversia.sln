@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversia.Backend", "Diversia.Backend\Diversia.Backend.csproj", "{4875A0CD-E4B9-4991-8F22-B79A02355534}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAC9971A-7BDF-47D4-A3B3-08296E82B41A} = {AAC9971A-7BDF-47D4-A3B3-08296E82B41A}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.- Backend", "01.- Backend", "{4F09BF38-ABEF-4BD0-A3D3-6ABA3040FB78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.- Core", "03.- Core", "{FD5DF7E8-A78B-46C4-81D6-5BE3E5B39AD9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\MVC\MVC5EXAMPLE\MVC5Example.Core\Extensions\WcfExtensions.cs = ..\..\..\MVC\MVC5EXAMPLE\MVC5Example.Core\Extensions\WcfExtensions.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversia.Core", "Diversia.Core\Diversia.Core.csproj", "{E37C9232-0FB3-40CB-BD9E-37DCB4009BDF}"
 EndProject
@@ -36,6 +42,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversia.Service", "Diversia.Service\Diversia.Service.csproj", "{F757056F-137E-4795-9D24-4773393989BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversia.Repository", "Diversia.Repository\Diversia.Repository.csproj", "{D02848D7-6981-4A11-A195-DFCA26CD70EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversia.Models.Response", "Diversia.Models.Response\Diversia.Models.Response.csproj", "{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +83,10 @@ Global
 		{D02848D7-6981-4A11-A195-DFCA26CD70EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D02848D7-6981-4A11-A195-DFCA26CD70EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D02848D7-6981-4A11-A195-DFCA26CD70EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +103,6 @@ Global
 		{15CCC224-6A1D-4962-83D4-D9126B38E77C} = {8CED2FAB-02AF-49DE-8820-C9E6B27B2A77}
 		{F757056F-137E-4795-9D24-4773393989BA} = {5389C7C3-ADF2-41E8-BA09-B28201889516}
 		{D02848D7-6981-4A11-A195-DFCA26CD70EE} = {9155AB9A-443D-4363-8CEE-FA7B5AA671CB}
+		{28B2A53E-83AD-48A3-9DF5-8C8A87AD665E} = {8CED2FAB-02AF-49DE-8820-C9E6B27B2A77}
 	EndGlobalSection
 EndGlobal
