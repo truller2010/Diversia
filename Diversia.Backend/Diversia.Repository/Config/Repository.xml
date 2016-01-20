@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor">
+
+  <object id="AuthenticationClientRepository" type="Diversia.Repository.Authentication.AuthenticationClientRepository.AuthenticationClientRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+  
+  <object id="AuthenticationUsersRepository" type="Diversia.Repository.Authentication.AuthenticationUsersRepository.AuthenticationUsersRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+
+  <object id="AuthenticationRefreshTokenRepository" type="Diversia.Repository.Authentication.AuthenticationRefreshTokenRepository.AuthenticationRefreshTokenRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+
+  <object id="BlogPostRepository" type="Diversia.Repository.BlogPost.BlogPostRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+
+  <object id="BlogCategoryRepository" type="Diversia.Repository.BlogCategory.BlogCategoryRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+
+  <object id="BlogTagRepository" type="Diversia.Repository.BlogTag.BlogTagRepository, Diversia.Repository">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+  
+</objects>

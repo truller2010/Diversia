@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor">
+
+  <object name="AuthenticationClientService" type="Diversia.Service.Authentication.AuthenticationClientService.AuthenticationClientService, Diversia.Service">
+    <property name="AuthenticationClientRepository" ref="AuthenticationClientRepository" />
+  </object>
+
+  <object name="AuthenticationUsersService" type="Diversia.Service.Authentication.AuthenticationUsersService.AuthenticationUsersService, Diversia.Service">
+    <property name="AuthenticationUsersRepository" ref="AuthenticationUsersRepository" />
+  </object>
+
+  <object name="AuthenticationRefreshTokenService" type="Diversia.Service.Authentication.AuthenticationRefreshTokenService.AuthenticationRefreshTokenService, Diversia.Service">
+    <property name="AuthenticationRefreshTokenRepository" ref="AuthenticationRefreshTokenRepository" />
+  </object>
+
+  <object name="BlogPostService" type="Diversia.Service.BlogPost.BlogPostService, Diversia.Service">
+    <property name="BlogPostRepository" ref="BlogPostRepository" />
+  </object>
+
+  <object name="BlogCategoryService" type="Diversia.Service.BlogCategory.BlogCategoryService, Diversia.Service">
+    <property name="BlogCategoryRepository" ref="BlogCategoryRepository" />
+  </object>
+
+  <object name="BlogTagService" type="Diversia.Service.BlogTag.BlogTagService, Diversia.Service">
+    <property name="BlogTagRepository" ref="BlogTagRepository" />
+  </object>
+  
+</objects>
